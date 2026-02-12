@@ -6,41 +6,35 @@ Proyecto web simple en **Python + Flask** **Git**
 - **Python 3.10+** instalado (recomendado 3.11 o 3.12)
 - Windows: usar **PowerShell**
 
-## 2) Cómo ejecutarlo (Windows / PowerShell)
 
-### A. Entra a la carpeta del proyecto
-```powershell
-cd manga_shop
+### A. Crea un entorno virtual
 ```
-
-### B. Crea un entorno virtual
-```powershell
 python -m venv .venv
 ```
 
-### C. Activa el entorno virtual
-```powershell
+### B. Activa el entorno virtual
+```
 .\.venv\Scripts\Activate.ps1
 ```
 
 > Si PowerShell te bloquea scripts:
-```powershell
+```
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```
 Luego vuelve a activar.
 
 ### D. Instala dependencias
-```powershell
+```
 pip install -r requirements.txt
 ```
 
 ### E. Crea la BD y datos de ejemplo
-```powershell
+```
 python seed.py
 ```
 
 ### F. Corre la web
-```powershell
+```
 python run.py
 ```
 
