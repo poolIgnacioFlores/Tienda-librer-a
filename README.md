@@ -67,6 +67,3 @@ Abre: http://127.0.0.1:5000
 - Auth: `/auth/register`, `/auth/login`, `/auth/logout`, `/auth/profile`
 - Admin: `/admin`, `/admin/books`, `/admin/books/new`, `/admin/books/<id>/edit`, `/admin/books/<id>/delete`
 
----
-
-Listo. 🎯
