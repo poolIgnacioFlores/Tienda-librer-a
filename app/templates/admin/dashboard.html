@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Admin | Pool Manga Shop{% endblock %}
+
+{% block content %}
+<h2>Admin Dashboard</h2>
+
+<div class="row mt-3 g-3">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="text-muted">Libros</div>
+        <div class="display-6">{{ books_count }}</div>
+        <a class="btn btn-sm btn-outline-primary" href="{{ url_for('admin.books') }}">Gestionar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <div class="text-muted">Categorías</div>
+        <div class="display-6">{{ categories_count }}</div>
+        <div class="small text-muted">Se cargan desde seed.py</div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Mis pedidos | Pool Manga Shop{% endblock %}
+
+{% block content %}
+<h2>Mis pedidos</h2>
+
+{% if orders|length == 0 %}
+  <div class="alert alert-info mt-3">Aún no tienes pedidos.</div>
+{% else %}
+  <div class="list-group mt-3">
+    {% for o in orders %}
+      <a class="list-group-item list-group-item-action" href="{{ url_for('main.order_detail', order_id=o.id) }}">
+        <div class="d-flex justify-content-between">
+          <b>Pedido #{{ o.id }}</b>
+          <span class="text-muted small">{{ o.created_at }}</span>
+        </div>
+        <div>Total: <b>{{ price(o.total) }}</b></div>
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
+{% endblock %}

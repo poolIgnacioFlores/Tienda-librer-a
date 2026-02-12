@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Admin Libros | Pool Manga Shop{% endblock %}
+
+{% block content %}
+<div class="d-flex align-items-center justify-content-between">
+  <h2>Admin: Libros</h2>
+  <a class="btn btn-primary" href="{{ url_for('admin.books_new') }}">Nuevo</a>
+</div>
+
+<div class="table-responsive mt-3">
+  <table class="table align-middle">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Categoría</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for b in books %}
+      <tr>
+        <td>{{ b.id }}</td>
+        <td>{{ b.title }}</td>
+        <td>{{ b.author }}</td>
+        <td>{{ price(b.price) }}</td>
+        <td>{{ b.stock }}</td>
+        <td>{{ b.category.name }}</td>
+        <td class="text-end d-flex gap-2 justify-content-end">
+          <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('admin.books_edit', book_id=b.id) }}">Editar</a>
+          <form method="post" action="{{ url_for('admin.books_delete', book_id=b.id) }}" onsubmit="return confirm('¿Eliminar?')">
+            <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

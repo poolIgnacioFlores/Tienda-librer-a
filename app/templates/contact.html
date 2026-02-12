@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Contacto | Pool Manga Shop{% endblock %}
+
+{% block content %}
+<h2>Contacto</h2>
+
+<div class="row mt-3 g-3">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <form method="post">
+          <div class="mb-2">
+            <label class="form-label">Tu nombre</label>
+            <input class="form-control" name="name" placeholder="Ej: Pool" />
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Mensaje</label>
+            <textarea class="form-control" name="message" rows="4" placeholder="Hola, tengo una consulta..."></textarea>
+          </div>
+          <button class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6">
+    <div class="alert alert-secondary">
+      <b>Nota:</b> esto es demo. No manda correos reales. Solo simula formularios y flashes.
+    </div>
+  </div>
+</div>
+{% endblock %}

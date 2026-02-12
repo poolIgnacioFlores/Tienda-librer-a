@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ book.title }} | Pool Manga Shop{% endblock %}
+
+{% block content %}
+<div class="row g-3">
+  <div class="col-md-4">
+    <div class="card">
+      {% if book.cover_url %}
+        <img src="{{ book.cover_url }}" class="card-img-top cover-lg" alt="cover">
+      {% endif %}
+      <div class="card-body">
+        <div class="text-muted small">Categoría: {{ book.category.name }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <h2>{{ book.title }}</h2>
+    <div class="text-muted">Autor: {{ book.author }}</div>
+    <div class="mt-3 fs-4 fw-bold">{{ price(book.price) }}</div>
+    <div class="mt-2">Stock: <b>{{ book.stock }}</b></div>
+
+    <p class="mt-3">{{ book.description }}</p>
+
+    <div class="d-flex gap-2">
+      <form method="post" action="{{ url_for('main.cart_add', book_id=book.id) }}">
+        <button class="btn btn-primary" type="submit">Agregar al carrito</button>
+      </form>
+      <a class="btn btn-outline-secondary" href="{{ url_for('main.catalog') }}">Volver</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
