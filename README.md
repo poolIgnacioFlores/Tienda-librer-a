@@ -1,4 +1,4 @@
-# Pool Manga Shop (Flask)
+# Manga Shop (Flask)
 
 Proyecto web simple en **Python + Flask** **Git**
 
@@ -10,7 +10,7 @@ Proyecto web simple en **Python + Flask** **Git**
 
 ### A. Entra a la carpeta del proyecto
 ```powershell
-cd pool_manga_shop
+cd manga_shop
 ```
 
 ### B. Crea un entorno virtual
